@@ -262,25 +262,25 @@ Enterprise-FinTech-DataLakehouse/
 
 ## Bronze → Silver Notebook
 
-> *(Add screenshot)*
+![Pipeline](Images/Bronzetosilvernotebook.png)
 
 ---
 
 ## Silver → Gold Notebook
 
-> *(Add screenshot)*
+![Pipeline](Images/silvertogoldnotebook.png)
 
 ---
 
 ## Storage Account
 
-> *(Add screenshot showing Bronze / Silver / Gold folders)*
+![Pipeline](Images/SAlayers.png)
 
 ---
 
 ## Logic App
 
-> *(Add screenshot)*
+![Pipeline](Images/Logicapp.png)
 
 ---
 
