@@ -256,7 +256,7 @@ Enterprise-FinTech-DataLakehouse/
 
 ## Pipeline
 
-> *(Add pipeline screenshot here)*
+![Pipeline](images/Fintechpipelineflow.png)
 
 ---
 
