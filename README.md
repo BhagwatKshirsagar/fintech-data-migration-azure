@@ -256,7 +256,7 @@ Enterprise-FinTech-DataLakehouse/
 
 ## Pipeline
 
-![Pipeline](images/Fintechpipelineflow.png)
+![Pipeline](Images/Fintechpipelineflow.png)
 
 ---
 
