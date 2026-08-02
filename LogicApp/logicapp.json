@@ -1,0 +1,70 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "triggers": {
+            "When_an_HTTP_request_is_received": {
+                "type": "Request",
+                "kind": "Http",
+                "inputs": {
+                    "method": "POST",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "to": {
+                                "type": "string"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "emailmsg": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "actions": {
+            "Send_an_email_(V2)": {
+                "runAfter": {},
+                "type": "ApiConnection",
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['outlook']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "body": {
+                        "To": "@triggerBody()?['to']",
+                        "Subject": "@triggerBody()?['subject']",
+                        "Body": "<p class=\"editor-paragraph\">@{triggerBody()?['emailmsg']}</p>",
+                        "Importance": "High"
+                    },
+                    "path": "/v2/Mail"
+                }
+            }
+        },
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "type": "Object",
+                "defaultValue": {}
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "type": "Object",
+            "value": {
+                "outlook": {
+                    "id": "/subscriptions/292e63ec-4275-4003-ad1b-0648fb3900ea/providers/Microsoft.Web/locations/westus3/managedApis/outlook",
+                    "connectionId": "/subscriptions/292e63ec-4275-4003-ad1b-0648fb3900ea/resourceGroups/bhagwatresourcegroup/providers/Microsoft.Web/connections/outlook",
+                    "connectionName": "outlook",
+                    "connectionProperties": {}
+                }
+            }
+        }
+    }
+}
