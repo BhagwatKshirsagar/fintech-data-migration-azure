@@ -38,6 +38,7 @@ This project addresses these requirements using Azure Synapse Analytics.
 ---
 
 # 🏗 Solution Architecture
+![Pipeline](Architecture/ProjectArchitecture.png)
 
 ```
                     Azure SQL Database
